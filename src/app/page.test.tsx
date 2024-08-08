@@ -1,6 +1,7 @@
-import { render } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import HomePage from './page';
+import { UserProvider } from './useUserContext';
 
 jest.mock('next/navigation', () => ({
   useRouter: () => ({
@@ -8,8 +9,11 @@ jest.mock('next/navigation', () => ({
   }),
 }));
 
-
-test('render homepage', async () => {
-  render(<HomePage />);
+test('renders homepage', async () => {
+  render(
+    <UserProvider>
+      <HomePage />
+    </UserProvider>
+  );
 
 });

@@ -5,7 +5,7 @@ import { useUserContext } from './useUserContext';
 import styles from './page.module.css';
 
 const HomePage: React.FC = () => {
-  const { users } = useUserContext();
+  const { users} = useUserContext();
   const router = useRouter();
 
   const handleUserClick = (id: number) => {
